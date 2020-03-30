@@ -1,0 +1,579 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+i {
+  margin-right: 20px;
+  font-size: larger;
+}
+
+button {
+  cursor: pointer;
+}
+
+#main-container {
+  display: flex;
+  font-family: "Ubuntu";
+}
+
+.main-divs {
+  height: 96vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#blue-half {
+  /* top, transparent background color, faked with gradient */
+  background: linear-gradient(
+      to top right,
+      rgba(12, 12, 184, 0.315),
+      rgba(38, 94, 128, 0.603),
+      rgba(12, 12, 184, 0.315),
+      rgba(0, 0, 255, 0.432),
+      rgba(0, 0, 255, 0.432),
+      rgba(12, 12, 184, 0.315),
+      rgba(23, 124, 212, 0.479),
+      rgba(0, 0, 255, 0.432),
+      rgb(19, 111, 194, 0.8)
+    ),
+    /* bottom, image */
+      url(https://www.jing.fm/clipimg/full/215-2154141_twitter-bird-png-small-transparent-background-transparency-twitter.png)
+      no-repeat local left;
+  background-size: auto;
+  color: white;
+}
+
+#blue-half-paragraphs {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 18px;
+  font-weight: bolder;
+  animation-name: blue-half-paragraphs-slide;
+  animation-duration: 2s;
+}
+
+/* It is better to use transform property for performance reasons */
+/* @keyframes blue-half-paragraphs-slide {
+  from {
+    position: absolute;
+    color: rgb(25, 89, 145);
+    right: 0;
+  }
+  to {
+    position: absolute;
+    right: 62vw;
+  }
+} */
+
+@keyframes blue-half-paragraphs-slide {
+  from {
+    transform: translateX(100vw);
+    color: rgb(25, 89, 145);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+#white-half {
+  background-color: white;
+}
+
+.signup-login-butn {
+  width: 370px;
+  height: 40px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+#signup-butn {
+  background-color: rgb(54, 144, 223);
+  color: white;
+  border: none;
+  margin: 16px 0;
+}
+
+#signup-butn:hover {
+  background-color: rgb(31, 130, 218);
+}
+
+#signup-butn:focus {
+  outline: none;
+}
+
+#main-login-butn {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(54, 144, 223);
+  border-radius: 25px;
+  color: rgb(54, 144, 223);
+}
+
+#main-login-butn:hover {
+  background-color: #eff9ff;
+}
+
+#main-login-butn:focus {
+  outline: none;
+}
+
+#content-holder-white-half {
+  display: flex;
+  flex-direction: column;
+}
+
+#white-half-actual-content-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  animation-name: white-half-content-holder-slide-up;
+  animation-duration: 2s;
+}
+
+@keyframes white-half-content-holder-slide-up {
+  from {
+    transform: translateY(600px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+#main-h1 {
+  margin-bottom: 60px;
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+#white-half-nav-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  animation-name: login-slide;
+  animation-duration: 2s;
+}
+
+/* @keyframes login-slide {
+  from {
+    left: 0;
+  }
+  to {
+    left: 62vw;
+  }
+} */
+
+@keyframes login-slide {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+#nav-login-form {
+  display: flex;
+}
+
+#nav-forget-password {
+  text-decoration: none;
+  color: rgb(54, 144, 223);
+  font-size: 13px;
+}
+
+#nav-forget-password-panel {
+  margin-top: 3px;
+}
+
+#nav-forget-password:hover {
+  text-decoration: underline;
+}
+
+#nav-email {
+  border-bottom: 2px solid rgb(122, 125, 128);
+  margin-right: 15px;
+}
+
+#nav-password {
+  border-bottom: 2px solid rgb(122, 125, 128);
+}
+
+.input-warper {
+  position: relative;
+}
+
+.input-label {
+  position: absolute;
+  top: 0;
+  color: rgb(122, 125, 128);
+  font-size: 15px;
+  padding: 5px 10px 0px;
+  white-space: nowrap; /* to prevent line break */
+  overflow: hidden;
+  text-overflow: ellipsis; /* to add a nice "…" to the ending of the line 
+  if the content is to large to fit on one line */
+}
+
+.login-input {
+  height: 20px;
+  width: 180px;
+  background-color: rgb(245, 248, 250);
+  padding: 25px 10px 5px 10px;
+  border: none;
+  outline: none;
+}
+
+#nav-email:focus {
+  border-bottom: 2px solid rgb(54, 144, 223);
+}
+
+#nav-password:focus {
+  border-bottom: 2px solid rgb(54, 144, 223);
+}
+
+/* The “+” sign selector is used to select the elements 
+that are placed immediately after the specified element 
+but not inside the particular elements. 
+plus sign (+) is for the next sibling. */
+.login-input:focus + .input-label {
+  color: rgb(54, 144, 223);
+}
+
+#nav-login-butn {
+  height: 40px;
+  width: 72px;
+  border-radius: 50px;
+  background-color: white;
+  border: 1px solid rgb(54, 144, 223);
+  margin-top: 6px;
+  margin-left: 13px;
+  color: rgb(54, 144, 223);
+  font-size: 14px;
+  font-weight: bold;
+  outline: none;
+}
+
+#nav-login-butn:hover {
+  background-color: #eff9ff;
+}
+
+#footer-container {
+  width: 100%;
+  border-top: 1px solid lightgray;
+  padding: 0 15px;
+  height: 45px;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-links {
+  text-decoration: none;
+  color: rgb(101, 119, 134);
+  padding-right: 15px;
+  font: 13px "Ubuntu", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#footer-container a:hover {
+  text-decoration: underline;
+}
+
+.fa-twitter {
+  font-size: 38px;
+  color: rgb(54, 144, 223);
+}
+
+#bird-and-wings {
+  position: relative;
+  animation-name: fly-bird;
+  animation-delay: 2s;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes fly-bird {
+  0% {
+    transform: translateY(0);
+  }
+  5% {
+    transform: translateY(5px);
+  }
+  10% {
+    transform: translateY(10px);
+  }
+  15% {
+    transform: translateY(15px);
+  }
+  20% {
+    transform: translateY(20px);
+  }
+  25% {
+    transform: translateY(25px);
+  }
+  30% {
+    transform: translateY(25px);
+  }
+  35% {
+    transform: translateY(20px);
+  }
+  40% {
+    transform: translateY(15px);
+  }
+  45% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  55% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+  65% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-15px);
+  }
+  75% {
+    transform: translateY(-20px);
+  }
+  80% {
+    transform: translateY(-20px);
+  }
+  85% {
+    transform: translateY(-15px);
+  }
+  90% {
+    transform: translateY(-10px);
+  }
+  95% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#bird-wing {
+  position: absolute;
+  left: 13px;
+  top: 21px;
+  z-index: -1;
+  background: rgb(45, 142, 228);
+  height: 20px;
+  width: 17px;
+  border: none;
+  border-bottom-left-radius: 100%;
+  animation-name: wing-flip;
+  transform-origin: top;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-iteration-count: 3;
+}
+
+@keyframes wing-flip {
+  5% {
+    transform: rotate(-90deg);
+  }
+  15% {
+    transform: rotate(-70deg);
+  }
+  25% {
+    transform: rotate(-90deg);
+  }
+  35% {
+    transform: rotate(-70deg);
+  }
+  45% {
+    transform: rotate(-90deg);
+  }
+  55% {
+    transform: rotate(-70deg);
+  }
+  65% {
+    transform: rotate(-90deg);
+  }
+  75% {
+    transform: rotate(-70deg);
+  }
+  85% {
+    transform: rotate(-90deg);
+  }
+  95% {
+    transform: rotate(-70deg);
+  }
+}
+
+/* implementation option 1 */
+/* #toggle-login {
+  height: 40px;
+  width: 60px;
+  border-radius: 50px;
+  background-color: white;
+  border: 1px solid rgb(54, 144, 223);
+  color: rgb(54, 144, 223);
+  font-size: 14px;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  left: 300px;
+  top: 43px;
+}
+
+#toggle-login:hover {
+  background-color: #eff9ff;
+}
+
+@media (min-width: 1023px) {
+  #toggle-login {
+    display: none;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 1023px) {
+  #white-half-nav-container {
+    display: none;
+  }
+} */
+
+/* if the browser width is within the min-width and max-width breakpoints the code
+we write in the media query will take effect otherwise won't take effect.
+SYNTAX for media query is written as 
+@media <media-type> and (expressions) {}  */
+
+@media (min-width: 1023px) and (max-width: 1200px) {
+  /* #nav-login-form kicked over to right  */
+  #nav-login-form {
+    position: relative;
+    right: 15px;
+  }
+
+  .login-input {
+    width: 160px;
+  }
+
+  .input-label {
+    width: 160px;
+    white-space: nowrap; /* to prevent line break */
+    overflow: hidden;
+    text-overflow: ellipsis; /* to add a nice "…" to the ending of the line 
+    if the content is to large to fit on one line */
+  }
+}
+
+/* implementation option 2 */
+@media (min-width: 0px) and (max-width: 1023px), (max-height: 520px) {
+  /*Use a comma to specify two (or more) different rules: like for both width and hight*/
+  .input-warper {
+    /* making the login form disappear */
+    display: none;
+  }
+
+  /* moving the nav-login-butn down */
+  #white-half-nav-container {
+    top: -8px;
+    right: 5px;
+  }
+
+  /* instead of using the #white-half-nav-container 
+  we can use the #nav-login-butn giving it an
+  absolute position. */
+  /* #nav-login-butn {
+    position: absolute;
+    top: -20px;
+    right: 5px;
+  } */
+
+  #content-holder-white-half {
+    position: relative;
+  }
+
+  #footer-container {
+    height: 10vh;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 801px) {
+  #footer-container {
+    height: 13vh;
+  }
+
+  #blue-half-paragraphs {
+    position: relative;
+    top: 0px;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 801px) {
+  #main-container {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+
+  .main-divs {
+    height: 48%;
+    width: 100%;
+  }
+
+  #footer-container {
+    height: 5vh;
+    padding: 0 10px;
+    flex-wrap: wrap;
+    align-content: center;
+    align-content: space-around;
+    border: none;
+  }
+
+  #white-half {
+    top: 30px;
+    position: relative;
+  }
+
+  #blue-half {
+    top: 40px;
+    position: relative;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 420px) {
+  .signup-login-butn {
+    width: 300px;
+  }
+
+  #footer-container {
+    height: 11vh;
+  }
+
+  #main-h1 {
+    margin-bottom: 45px;
+    font-size: 26px;
+  }
+
+  #blue-half-paragraphs {
+    position: relative;
+    top: 0px;
+    height: 180px;
+    font-size: 16px;
+  }
+
+  i {
+    margin-right: 10px;
+    font-size: large;
+  }
+}
