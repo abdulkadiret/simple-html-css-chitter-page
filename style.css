@@ -27,23 +27,13 @@ button {
 
 #blue-half {
   /* top, transparent background color, faked with gradient */
-  background: linear-gradient(
-      to top right,
-      rgba(12, 12, 184, 0.315),
-      rgba(38, 94, 128, 0.603),
-      rgba(12, 12, 184, 0.315),
-      rgba(0, 0, 255, 0.432),
-      rgba(0, 0, 255, 0.432),
-      rgba(12, 12, 184, 0.315),
-      rgba(23, 124, 212, 0.479),
-      rgba(0, 0, 255, 0.432),
-      rgb(19, 111, 194, 0.8)
-    ),
-    /* bottom, image */
-      url(https://www.jing.fm/clipimg/full/215-2154141_twitter-bird-png-small-transparent-background-transparency-twitter.png)
-      no-repeat local left;
-  background-size: auto;
   color: white;
+  background: linear-gradient(
+    to top right,
+    rgba(19, 51, 194, 0.8),
+    rgba(0, 0, 255, 0.432),
+    rgba(12, 12, 184, 0.315)
+  );
 }
 
 #blue-half-paragraphs {
@@ -289,12 +279,12 @@ plus sign (+) is for the next sibling. */
   text-decoration: underline;
 }
 
-.fa-twitter {
+.fa-dove {
   font-size: 38px;
   color: rgb(54, 144, 223);
 }
 
-#bird-and-wings {
+#fly-bird {
   position: relative;
   animation-name: fly-bird;
   animation-delay: 2s;
@@ -365,56 +355,6 @@ plus sign (+) is for the next sibling. */
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-#bird-wing {
-  position: absolute;
-  left: 13px;
-  top: 21px;
-  z-index: -1;
-  background: rgb(45, 142, 228);
-  height: 20px;
-  width: 17px;
-  border: none;
-  border-bottom-left-radius: 100%;
-  animation-name: wing-flip;
-  transform-origin: top;
-  animation-delay: 2s;
-  animation-duration: 2s;
-  animation-iteration-count: 3;
-}
-
-@keyframes wing-flip {
-  5% {
-    transform: rotate(-90deg);
-  }
-  15% {
-    transform: rotate(-70deg);
-  }
-  25% {
-    transform: rotate(-90deg);
-  }
-  35% {
-    transform: rotate(-70deg);
-  }
-  45% {
-    transform: rotate(-90deg);
-  }
-  55% {
-    transform: rotate(-70deg);
-  }
-  65% {
-    transform: rotate(-90deg);
-  }
-  75% {
-    transform: rotate(-70deg);
-  }
-  85% {
-    transform: rotate(-90deg);
-  }
-  95% {
-    transform: rotate(-70deg);
   }
 }
 
